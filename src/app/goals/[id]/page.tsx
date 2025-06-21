@@ -113,7 +113,7 @@ export default function GoalDetailPage() {
       }
       setGoal(prev => prev ? ({ ...prev, llm_feedback: data.feedback }) : null);
     } catch (err) {
-        const errorMessage = err instanceof Error ? err.message : 'Failed to get LLM feedback.';
+        const errorMessage = err instanceof Error ? err.message : 'Failed to get AI Feedback.';
         // setError(errorMessage); // Set general error, or update llm_feedback with error
         setGoal(prev => prev ? ({ ...prev, llm_feedback: `Error during analysis: ${errorMessage}` }) : null);
     } finally {

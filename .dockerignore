@@ -1,0 +1,30 @@
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Dependencies
+node_modules
+npm-debug.log
+yarn-error.log
+.pnpm-debug.log
+
+# Next.js build outputs (these will be generated inside the Docker image)
+.next/
+out/
+
+# Local environment variables
+.env*.local
+
+# IDE / OS specific
+.DS_Store
+*.pem
+*.db # Exclude local database file if not intended to be bundled
+*.db-journal # Exclude local database journal file
+data/ # Exclude local data directory (database will be created inside container or mounted)
+
+# Test reports
+coverage/

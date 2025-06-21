@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone',
   serverExternalPackages: ['sqlite3'],
   // Add any Next.js configurations here that are compatible
   // with both Webpack and Turbopack, or specific to Turbopack

@@ -76,8 +76,8 @@ export async function POST(request: Request) {
     return NextResponse.json({ feedback });
 
   } catch (error) {
-    console.error('Error getting LLM feedback:', error);
-    let errorMessage = 'Failed to get LLM feedback.';
+    console.error('Error getting AI Feedback:', error);
+    let errorMessage = 'Failed to get AI Feedback.';
     if (error instanceof Error) {
         errorMessage = error.message;
     }

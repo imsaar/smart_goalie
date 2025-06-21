@@ -166,7 +166,7 @@ export default function GoalForm({ initialGoal, onSave, isEditing = false }: Goa
   };
 
   const handleGetLlmFeedback = async () => {
-    // ... (LLM feedback logic remains the same)
+    // ... (AI Feedback logic remains the same)
     if (!goal.title) {
       setError("Please provide at least a title for LLM analysis.");
       return;
@@ -194,7 +194,7 @@ export default function GoalForm({ initialGoal, onSave, isEditing = false }: Goa
       const data = await response.json();
       setGoal(prev => ({ ...prev, llm_feedback: data.feedback }));
     } catch (err) {
-        const errorMessage = err instanceof Error ? err.message : 'Failed to get LLM feedback.';
+        const errorMessage = err instanceof Error ? err.message : 'Failed to get AI Feedback.';
         setError(errorMessage);
         setGoal(prev => ({ ...prev, llm_feedback: `Error: ${errorMessage}` }));
     } finally {
@@ -314,11 +314,11 @@ export default function GoalForm({ initialGoal, onSave, isEditing = false }: Goa
             disabled={llmLoading || isLoading}
             className="mt-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-50"
             >
-            {llmLoading ? 'Analyzing...' : 'Get LLM Feedback'}
+            {llmLoading ? 'Analyzing...' : 'Get AI Feedback'}
             </button>
             {goal.llm_feedback && (
             <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-md">
-                <h4 className="text-sm font-semibold text-blue-800">LLM Feedback:</h4>
+                <h4 className="text-sm font-semibold text-blue-800">AI Feedback:</h4>
                 <pre className="whitespace-pre-wrap text-sm text-blue-700">{goal.llm_feedback}</pre>
             </div>
             )}
